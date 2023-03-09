@@ -1,0 +1,27 @@
+version = 0.1
+
+extensions = ['chomp@0.1:npm', 'chomp@0.1:swc']
+
+[env]
+PACKAGE_MANAGER = 'yarn'
+
+[[task]]
+name = 'install:loader-deps'
+run = 'npm install --no-save @jspm/import-map fs-extra node-fetch'
+
+[[task]]
+name = 'clone:loader'
+target = 'loader.js'
+run = 'curl https://raw.githubusercontent.com/jspm/node-importmap-http-loader/main/loader.js --output loader.js'
+
+[[task]]
+name = 'transpile'
+deps = ['src/##.ts']
+target = 'lib/##.js'
+template = 'swc'
+
+
+[[task]]
+name = 'build'
+deps = ['install:loader-deps', 'npm:install', 'transpile', 'clone:loader']
+run = 'node --loader ./loader.js lib/index.js'

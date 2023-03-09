@@ -1,0 +1,9 @@
+{
+    "name": "jspm-nodejs-example",
+    "type": "module",
+    "devDependencies": {
+        "@swc/cli": "0.1",
+        "@swc/core": "1",
+        "jspm": "^2.0.0-beta.7"
+    }
+}
