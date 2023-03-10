@@ -1,0 +1,15 @@
+{
+  "setupTasks": [
+    {
+      "name": "Installing chomp",
+      "command": "npm install -g chomp"
+    }
+  ],
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "chomp build",
+      "runAtStart": true
+    }
+  }
+}
