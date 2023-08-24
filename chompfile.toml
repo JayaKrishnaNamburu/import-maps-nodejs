@@ -12,7 +12,7 @@ run = 'npm install --no-save @jspm/import-map fs-extra node-fetch'
 [[task]]
 name = 'clone:loader'
 target = 'loader.js'
-run = 'curl https://raw.githubusercontent.com/jspm/node-importmap-http-loader/main/loader.js --output loader.js'
+run = 'curl https://raw.githubusercontent.com/jspm/node-importmap-http-loader/5cc4a2a5c9a6d8ab875831fbd70651a50c9f019a/loader.js --output loader.js'
 
 [[task]]
 name = 'transpile'
